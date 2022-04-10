@@ -24,7 +24,21 @@
         "command": "git-cli.newCommit",
         "title": "New Commit"
       }
-    ]
+    ],
+    "menus": {
+      "scm/title": [
+        {
+          "command": "git-cli.newBranch",
+          "when": "scmProvider == git",
+          "group": "navigation"
+        },
+        {
+          "command": "git-cli.newCommit",
+          "when": "scmProvider == git",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run compile",
@@ -49,3 +63,4 @@
   },
   "dependencies": {}
 }
+
