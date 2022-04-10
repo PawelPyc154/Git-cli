@@ -19,7 +19,6 @@
       {
         "command": "git-cli.newBranch",
         "title": "New branch"
-   
       },
       {
         "command": "git-cli.newCommit",
@@ -39,6 +38,61 @@
           "group": "navigation"
         }
       ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "git-cli",
+      "properties": {
+        "git-cli.scopeOptions": {
+          "type": "array",
+          "default": [
+            {
+              "label": "local-app"
+            },
+            {
+              "label": "common"
+            },
+            {
+              "label": "components"
+            }
+          ],
+          "description": "scopeOptions"
+        },
+        "git-cli.commitActionOptions": {
+          "type": "array",
+          "default": [
+            {
+              "label": "added"
+            },
+            {
+              "label": "fixed"
+            },
+            {
+              "label": "removed"
+            }
+          ],
+          "description": "commitActionOptions"
+        },
+        "git-cli.branchTypeOptions": {
+          "type": "array",
+          "default": [
+            {
+              "label": "feature"
+            },
+            {
+              "label": "bugfix"
+            },
+            {
+              "label": "hotfix"
+            },
+            {
+              "label": "internal",
+              "details": "interan change in monorepo, script, library updates etc."
+            }
+          ],
+          "description": "branchTypeOptions"
+        }
+      }
     }
   },
   "scripts": {
