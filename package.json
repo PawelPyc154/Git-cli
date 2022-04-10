@@ -19,6 +19,7 @@
       {
         "command": "git-cli.newBranch",
         "title": "New branch"
+   
       },
       {
         "command": "git-cli.newCommit",
