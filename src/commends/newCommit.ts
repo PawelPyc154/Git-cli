@@ -1,17 +1,24 @@
 import * as vscode from 'vscode'
-import { getBranch, getCommitAction, getDescription, getRepositorie, getScope, getTaskId } from '../utils'
+import { getBranch } from '../utils/branch'
+import { getCommitAction, getDescription, getRepositorie, getScope, getTaskId } from '../utils/inputs'
+import { getConfiguration } from './../utils/configuration'
 
 export const newCommit = vscode.commands.registerCommand('git-cli.newCommit', async () => {
   const repositorie = await getRepositorie()
   if (!repositorie) {
     return
   }
+  const { commitDescriptionFromBranchRegex, commitTaskIdFromBranchRegex } = getConfiguration()
+
   const scope = await getScope()
   const commitAction = await getCommitAction()
   const branchName = getBranch(repositorie)
-  const defaultTaskId = branchName.match(/(\d){4}/)?.[0] || ''
+
+  const defaultTaskId = branchName.match(commitTaskIdFromBranchRegex)?.[0] || ''
   const taskId = await getTaskId({ defaultTaskId })
-  const description = await getDescription()
+
+  const defaultDescription = branchName.match(commitDescriptionFromBranchRegex)?.[0].replaceAll('-', ' ').trim() || ''
+  const description = await getDescription({ defaultDescription })
 
   if (!scope || !commitAction || !taskId || !description) {
     return

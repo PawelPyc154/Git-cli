@@ -21,4 +21,3 @@ This extension contributes the following settings:
 ### 1.0.0
 
 <!-- - [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines) -->
-
