@@ -43,6 +43,18 @@
       "type": "object",
       "title": "git-cli",
       "properties": {
+        "git-cli.taskIdRegexValidation": {
+          "type": "string",
+          "default": "/^((d){4})$/"
+        },
+        "git-cli.commitTaskIdFromBranchRegex": {
+          "type": "string",
+          "default": "/(d){4}/"
+        },
+        "git-cli.commitDescriptionFromBranchRegex": {
+          "type": "string",
+          "default": "/[A-Za-z-]+$/"
+        },
         "git-cli.scopeOptions": {
           "type": "array",
           "default": [
@@ -70,8 +82,7 @@
             {
               "label": "removed"
             }
-          ],
-          "description": "commitActionOptions"
+          ]
         },
         "git-cli.branchTypeOptions": {
           "type": "array",
@@ -89,8 +100,7 @@
               "label": "internal",
               "details": "interan change in monorepo, script, library updates etc."
             }
-          ],
-          "description": "branchTypeOptions"
+          ]
         }
       }
     }

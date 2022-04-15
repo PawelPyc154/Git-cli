@@ -1,6 +1,5 @@
 import * as vscode from 'vscode'
-import { getBranchType, getDescription, getRepositorie, getScope, getTaskId } from '../utils'
-import { getConfirmedBranchName } from './../utils'
+import { getScope, getBranchType, getTaskId, getDescription, getRepositorie, getConfirmedBranchName } from '../utils/inputs'
 
 export const newBranch = vscode.commands.registerCommand('git-cli.newBranch', async () => {
   const scope = await getScope()
