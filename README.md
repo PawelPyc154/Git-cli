@@ -16,8 +16,13 @@
 This extension contributes the following settings:
 
 - `myExtension.enable`: enable/disable this extension
+- `myExtension.thing`: set to `blah` to do something
+
 - `myExtension.thing`: set to `blah` to do something -->
 
 ### 1.0.0
 
 <!-- - [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines) -->
+<!-- - [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines) -->
+<!-- - [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines) -->
+<!-- - [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)123 -->
