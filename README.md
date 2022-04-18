@@ -22,3 +22,4 @@ This extension contributes the following settings:
 
 <!-- - [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines) -->
 <!-- - [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines) -->
+<!-- - [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines) -->
