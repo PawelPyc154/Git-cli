@@ -14,10 +14,10 @@ export const newCommit = vscode.commands.registerCommand('git-cli.newCommit', as
   const commitAction = await getCommitAction()
   const branchName = getBranch(repositorie)
 
-  const defaultTaskId = branchName.match(commitTaskIdFromBranchRegex)?.[0] || ''
+  const defaultTaskId = branchName.match(new RegExp(commitTaskIdFromBranchRegex))?.[0] || ''
   const taskId = await getTaskId({ defaultTaskId })
 
-  const defaultDescription = branchName.match(commitDescriptionFromBranchRegex)?.[0].replaceAll('-', ' ').trim() || ''
+  const defaultDescription = branchName.match(new RegExp(commitDescriptionFromBranchRegex))?.[0].replaceAll('-', ' ').trim() || ''
   const description = await getDescription({ defaultDescription })
 
   if (!scope || !commitAction || !taskId || !description) {
@@ -27,3 +27,4 @@ export const newCommit = vscode.commands.registerCommand('git-cli.newCommit', as
   await vscode.commands.executeCommand('workbench.view.scm')
   repositorie.inputBox.value = commitMessage
 })
+

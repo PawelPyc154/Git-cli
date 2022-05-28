@@ -9,10 +9,11 @@ export const getTaskId = async (options?: { defaultTaskId?: string }) => {
     ignoreFocusOut: true,
     value: options?.defaultTaskId || '',
     validateInput(value) {
-      if (!value.match(taskIdRegexValidation)) {
+      if (!value.match(new RegExp(taskIdRegexValidation))) {
         return 'Invalid taskId'
       }
       return null
     },
   })
 }
+
