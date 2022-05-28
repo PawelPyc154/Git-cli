@@ -45,15 +45,15 @@
       "properties": {
         "git-cli.taskIdRegexValidation": {
           "type": "string",
-          "default": "/^((d){4})$/"
+          "default": "^((\\d){4})$"
         },
         "git-cli.commitTaskIdFromBranchRegex": {
           "type": "string",
-          "default": "/(d){4}/"
+          "default": "(\\d){4}"
         },
         "git-cli.commitDescriptionFromBranchRegex": {
           "type": "string",
-          "default": "/[A-Za-z-]+$/"
+          "default": "[A-Za-z-]+$"
         },
         "git-cli.scopeOptions": {
           "type": "array",
@@ -121,11 +121,14 @@
     "@typescript-eslint/eslint-plugin": "^5.16.0",
     "@typescript-eslint/parser": "^5.16.0",
     "@vscode/test-electron": "^2.1.3",
+    "esbuild": "^0.14.41",
     "eslint": "^8.11.0",
     "glob": "^7.2.0",
     "mocha": "^9.2.2",
     "typescript": "^4.5.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "package": "^1.0.1",
+    "vsce": "^2.8.0"
+  }
 }
-
