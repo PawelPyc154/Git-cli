@@ -18,7 +18,8 @@ export const newCommit = vscode.commands.registerCommand('git-cli.newCommit', as
   const taskId = await getTaskId({ defaultTaskId })
 
   const defaultDescription = branchName.match(new RegExp(commitDescriptionFromBranchRegex))?.[0].replaceAll('-', ' ').trim() || ''
-  const description = await getDescription({ defaultDescription })
+  const capitalizeFirstLetter = (text: string) => text.charAt(0).toUpperCase() + text.slice(1)
+  const description = await getDescription({ defaultDescription: capitalizeFirstLetter(defaultDescription) })
 
   if (!scope || !commitAction || !taskId || !description) {
     return
